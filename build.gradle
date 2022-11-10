@@ -1,0 +1,22 @@
+/*
+//Author: Vishnu V
+//Project Name: Containment Zone Alerting Application
+//MD5 hash for project authentic verification : 763f8185a7ba4ebea28cd69d233fb6c1 (Cannot be decrypted except by the author)
+*/
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.13'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.3.1' apply false
+    id 'com.android.library' version '7.3.1' apply false
+    id 'com.google.gms.google-services' version '4.3.13' apply false
+
+}

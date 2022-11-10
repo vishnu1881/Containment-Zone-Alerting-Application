@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CZAP</string>
+    <string name="czap_welcomes_you">CZAP WELCOMES YOU</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+</resources>

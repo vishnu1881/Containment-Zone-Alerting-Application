@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "100032091437",
+    "project_id": "czap-e4db1",
+    "storage_bucket": "czap-e4db1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100032091437:android:c213f5ab061ad9b94f6fa4",
+        "android_client_info": {
+          "package_name": "com.czapcorp.czap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100032091437-rjo1spl7ferlp0qg4nlojjhsi6jq4hej.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.czapcorp.czap",
+            "certificate_hash": "190ab1bc6b8bd250713f7d8fe6517c9444c47a2a"
+          }
+        },
+        {
+          "client_id": "100032091437-dauoqu1fq8sp07a30rohbdnnlek1gvvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoZjSb_9zac6mulR59jjYxCUY_SwPh3Ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100032091437-dauoqu1fq8sp07a30rohbdnnlek1gvvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
