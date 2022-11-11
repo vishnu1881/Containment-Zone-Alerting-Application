@@ -59,14 +59,13 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
-        checkUser();
         Btn = findViewById(R.id.btn_register);
         emailTextView = findViewById(R.id.regemail);
         passwordTextView = findViewById(R.id.regpassword);
         progressbar = findViewById(R.id.progressbar);
         log = findViewById(R.id.btn_go_to_login);
-        SignInButton signInButton = findViewById(R.id.sign_in_button);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
+        //SignInButton signInButton = findViewById(R.id.sign_in_button);
+        //signInButton.setSize(SignInButton.SIZE_STANDARD);
         Toast.makeText(RegisterActivity.this,"Disable Battery Optimizations to run the app in Background ",Toast.LENGTH_LONG).show();
         ignoreBatteryOptimization();
 
@@ -87,7 +86,8 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        //Google Sign-in
+
+/*        //Google Sign-in button process start
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -103,6 +103,9 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivityForResult(signInIntent, RC_SIGN_IN);
             }
         });
+        // Google sign in button process ends
+*/
+
     }
 
     //Battery optimisation
@@ -120,16 +123,58 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-//Check user if already Logged in
-    private void checkUser() {
-        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-        if (firebaseUser != null) {
-            Log.d(TAG, "CheckUser: Already Logged In");
-            startActivity(new Intent(this, homepage.class));
-            finish();
-        }
-    }
 
+    //Register user with custom mail and password
+    private void registerNewUser() {
+
+        progressbar.setVisibility(View.VISIBLE);
+        String email, password;
+        email = emailTextView.getText().toString();
+        password = passwordTextView.getText().toString();
+
+        // Validations for input email and password
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "Please enter email!!", Toast.LENGTH_LONG).show();
+            progressbar.setVisibility(View.GONE);
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "Please enter password!!", Toast.LENGTH_LONG).show();
+            progressbar.setVisibility(View.GONE);
+            return;
+        }
+
+        mAuth
+                .createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    FirebaseUser fuser = mAuth.getCurrentUser();
+
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+
+                            // Registration Success
+                            Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_LONG).show();
+
+                            // hide the progress bar
+                            progressbar.setVisibility(View.GONE);
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                        } else {
+
+                            // Registration failed
+                            Toast.makeText(getApplicationContext(), "Registration failed!!" + " Please try again later", Toast.LENGTH_LONG).show();
+
+                            // hide the progress bar
+                            progressbar.setVisibility(View.GONE);
+                        }
+                    }
+                });
+    }
+    //Register process ends
+
+
+/*    //Google Sign in process
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -179,51 +224,10 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 });
     }
-
-    private void registerNewUser() {
-
-        progressbar.setVisibility(View.VISIBLE);
-        String email, password;
-        email = emailTextView.getText().toString();
-        password = passwordTextView.getText().toString();
-
-        // Validations for input email and password
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please enter email!!", Toast.LENGTH_LONG).show();
-            return;
-        }
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Please enter password!!", Toast.LENGTH_LONG)
-                    .show();
-            return;
-        }
+    //Google sign in process ends
+*/
 
 
-        mAuth
-                .createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    FirebaseUser fuser = mAuth.getCurrentUser();
 
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
 
-                            // Registration Success
-                            Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_LONG).show();
-
-                            // hide the progress bar
-                            progressbar.setVisibility(View.GONE);
-                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                            startActivity(intent);
-                        } else {
-
-                            // Registration failed
-                            Toast.makeText(getApplicationContext(), "Registration failed!!" + " Please try again later", Toast.LENGTH_LONG).show();
-
-                            // hide the progress bar
-                            progressbar.setVisibility(View.GONE);
-                        }
-                    }
-                });
-    }
 }

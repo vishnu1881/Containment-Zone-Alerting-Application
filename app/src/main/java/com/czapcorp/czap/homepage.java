@@ -13,11 +13,12 @@ import android.widget.Button;
 import android.widget.TextView;
 //import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class homepage extends AppCompatActivity {
-
     private FirebaseAuth firebaseAuth;
     private TextView email;
 
@@ -25,6 +26,7 @@ public class homepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
         email = findViewById(R.id.useremail);
         Button logoutt = findViewById(R.id.logoutbtn);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -37,7 +39,6 @@ public class homepage extends AppCompatActivity {
                 checkUser();
             }
         });
-
     }
 
     private void checkUser() {
@@ -50,7 +51,19 @@ public class homepage extends AppCompatActivity {
             email.setText(fireemail);
 
         }
-
-
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
