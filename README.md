@@ -4,7 +4,6 @@
 
 > An Android app for alerting the user when they enter any contaminated zone.
 
-# YouTube link: https://youtu.be/HkZYMolDtT4
 
 ## Project Description 📜📜:
 > The application is intended to provide information about the containment zones in a particular region by alerting people, through continuous monitoring of an individual's location through GPS.The key benefits of the application are monitoring people's activity and alerting them when they enter a contaminated zone.
@@ -27,12 +26,14 @@
  - Android Studio
  - MySql
  - SendGrid
+ 
+ # YouTube link: https://youtu.be/HkZYMolDtT4
 
 ## Technology Architecture of the app 🔎:
 <p align="center"><img src="https://lh4.googleusercontent.com/MI4NgQUlRa6ciDXCKySX3HIh_EEGH6R9vPQLXOjGFqWSD9SWf4k05e4JsYWFzy2ZvBxraSN-1nQnDE8lPLnMZiU_sutk7lQBEhvRl2WxEMey0bCTsZuRmudnYxYRBg" width="1000" height="600" align="center" /></p>
 
 
-##Note:
+## Note:
 - Change the IBM DB2 connections credentials to your account credentials
 - Change the MySql Db Username, Password based on your DB details
 - Change the SendGrid API Key for sending E-mail
