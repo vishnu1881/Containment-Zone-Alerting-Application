@@ -8,26 +8,16 @@
 ## Project Description 📜📜:
 > The application is intended to provide information about the containment zones in a particular region by alerting people, through continuous monitoring of an individual's location through GPS.The key benefits of the application are monitoring people's activity and alerting them when they enter a contaminated zone.
 
-## Our Team😊:
- 1. VISHNU V 
- 2. ARAVIND KUMAR U
- 3. VIKASH R
- 4. VIGNESH G
- 
-
 ## Technologies Used 🖥️☁:
  -	HTML
  - CSS and BootStrap
  -	JavaScript
  -	Python-Flask
- -	Docker
  -	IBM Cloud Object Storage
  -	IBM DB2
  - Android Studio
  - MySql
  - SendGrid
- 
- # YouTube link: https://youtu.be/HkZYMolDtT4
 
 ## Technology Architecture of the app 🔎:
 <p align="center"><img src="https://lh4.googleusercontent.com/MI4NgQUlRa6ciDXCKySX3HIh_EEGH6R9vPQLXOjGFqWSD9SWf4k05e4JsYWFzy2ZvBxraSN-1nQnDE8lPLnMZiU_sutk7lQBEhvRl2WxEMey0bCTsZuRmudnYxYRBg" width="1000" height="600" align="center" /></p>
